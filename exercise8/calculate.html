@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+   <title>Addition Form</title>
+    <script>
+        // cacluate grade and display in div
+        function calculateVals(){
+          
+            // get content from input
+            var valuen1 =  parseInt(document.getElementById('value1').value);
+            var valuen2 = parseInt(document.getElementById('value2').value);
+           
+            //calculate the result 
+           var total = valuen1 + valuen2;
+
+           var currentValue =  document.getElementById('result');
+           
+            //display in div
+           currentValue.innerHTML = total;
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="mx-4 d-flex justify-content-left">
+    <form>
+        <div class="mb-3">
+            <h3><b>Addition Form</b> </h3>
+            <br><label for="entry1" class="form-label">Enter Number 1: </label>
+            <input type="number" class="form-control" name="" id="value1" >
+        </div>
+
+        <div class="mb-3">
+            <label for="entry2" class="form-label">Enter Number 2: </label>
+            
+            <input
+            type="number"
+            class="form-control"
+            name=""
+            id="value2"
+            aria-describedby="helpId"
+            placeholder=""
+        />  
+        <br>
+        <label for="" class="form-label">Result:
+            <div id ="result" > 
+
+            </div>
+        </label>
+
+        <br>
+        <button
+            type="button"
+            class="btn btn-primary"
+            onclick="calculateVals()"
+        >
+            Submit
+        </button>
+
+        </div>
+      
+     </form>
+
+</body>
+</html>
