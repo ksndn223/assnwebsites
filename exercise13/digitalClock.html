@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+</head>
+<body>
+ <!--
+      To show current date-time in two divs
+      first div - using inner html
+      second div - using React
+    -->
+
+     <!-- real dom -->
+     <h1> Regular - Date - Time</h1>
+     <div id="regulardiv"> Regular div, this should show time</div>
+     
+ 
+       <!-- virtual dom -->
+     <h1> React- Date-Time</h1>
+     <div id ="reactdiv"> React div, this should show time</div>
+     
+ 
+ </body>
+ <script>
+    let regDiv = document.getElementById("regulardiv");
+    let root = ReactDOM.createRoot(document.getElementById("reactdiv"));
+
+
+    let renderTime = () => {
+        regDiv.innerHTML = "<div><input/> <p>" + (new Date()) + "</p></div>";
+
+
+        let DateComp = React.createElement("div",null, React.createElement("input"),
+                React.createElement("p",{},(new Date()).toString()));
+                 root.render(DateComp);
+    }
+   
+    setInterval(renderTime,1000);
+
+ </script>
+ 
+</html>
